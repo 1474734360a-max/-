@@ -35,10 +35,10 @@ DB_PATH = DATA_DIR / "dylikes.db"
 DATA_DIR.mkdir(exist_ok=True)
 
 DEMO_MODE = os.environ.get("DEMO_MODE", "1") == "1"
-USDT_RATE = float(os.environ.get("USDT_RATE", "7.25"))          # 1 USDT ≈ N 人民币
+USDT_RATE = float(os.environ.get("USDT_RATE") or "7.25")          # 1 USDT ≈ N 人民币
 SERVICE_URL = os.environ.get("SERVICE_URL", "https://t.me/douyinfast_admin")
 SERVICE_NAME = os.environ.get("SERVICE_NAME", "在线客服")
-ORDER_EXPIRE = int(os.environ.get("ORDER_EXPIRE_SECONDS", "1800"))  # 收银台 30 分钟倒计时
+ORDER_EXPIRE = int(os.environ.get("ORDER_EXPIRE_SECONDS") or "1800")
 
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s [%(levelname)s] %(message)s")
